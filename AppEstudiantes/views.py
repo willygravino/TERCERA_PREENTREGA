@@ -2,6 +2,9 @@ from django.shortcuts import render
 from AppEstudiantes.forms import EstudiantesForm
 from AppEstudiantes.models import Estudiante
 
+def Principal(request):
+    return render(request, "AppEstudiantes/index.html")
+
 def Formulario_Estudiantes(request):
     context = {
     "form" : EstudiantesForm(),
