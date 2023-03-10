@@ -1,3 +1,9 @@
+{% extends "AppEstudiantes/base.html" %}
+
+{% load static %}
+
+{% block principal %}
+
 <h1>Formulario ESTUDIANTES</h1>
 
 <form action="{% url 'agregar-estudiante' %}" method="post">
@@ -12,3 +18,5 @@
     <li> {{post.id}} - {{post.nombre_estudiante}} </li>
     {% endfor %}
 </ul>
+
+{% endblock %}
