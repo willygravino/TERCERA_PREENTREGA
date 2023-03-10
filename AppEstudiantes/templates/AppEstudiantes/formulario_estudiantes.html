@@ -1,0 +1,14 @@
+<h1>Formulario ESTUDIANTES</h1>
+
+<form action="{% url 'agregar-estudiante' %}" method="post">
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <input type="submit" value="Agregar">
+</form>
+ 
+<ul>
+    {% for post in Posts %}
+    <li> {{post.id}} - {{post.nombre_estudiante}} </li>
+    {% endfor %}
+</ul>
