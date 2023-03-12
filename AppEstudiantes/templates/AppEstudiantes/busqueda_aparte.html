@@ -1,0 +1,23 @@
+{% extends "AppEstudiantes/base.html" %}
+
+{% block losdatos %}
+
+</br>
+<h4>Nombres de Estudiantes que coinciden con la búsqueda:</h4>
+</br>
+
+{% if criterio!=none %}
+    <form action = "{% url 'buscar-estudiante' %}" class="d-flex">
+        <input class="form-control me-2" name= "criterio" type="search" placeholder="Nombre Estudiante" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+
+    <ul>
+    
+        {% for post in Posts %}
+        <li> {{post.id}} - {{post.nombre_estudiante}} </li>
+        {% endfor %}
+    </ul>   
+
+{% endblock %}
+

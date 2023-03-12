@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from AppEstudiantes.forms import EstudiantesForm, ProfesForm, CursosForm
 from AppEstudiantes.models import Estudiante, Profe, Curso
+from django.urls import reverse_lazy
 
 def Principal(request):
     return render(request, "AppEstudiantes/index.html")
@@ -15,6 +16,8 @@ def Agregar_Estudiante(request):
                 "form" : EstudiantesForm(),
                 "Posts": Estudiante.objects.all(),
          }
+            success_url = reverse_lazy("agregar_estudiante")
+
             return render(request, "AppEstudiantes/index.html",context) 
   
     else:
@@ -30,6 +33,13 @@ def Buscar_Estudiante(request):
             "Posts": Estudiante.objects.filter(nombre_estudiante__icontains=criterio).all(),
           }
        return render(request, "AppEstudiantes/busqueda_estudiante.html",contexto)
+
+def Buscar_Estudiante_aparte(request):
+       criterio = request.GET.get("criterio")
+       contexto = {
+            "Posts": Estudiante.objects.filter(nombre_estudiante__icontains=criterio).all(),
+          }
+       return render(request, "AppEstudiantes/busqueda_aparte.html",contexto)
 
 
 def Agregar_Profe(request):

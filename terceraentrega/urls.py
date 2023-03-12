@@ -15,16 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppEstudiantes.views import Agregar_Estudiante, Principal, Buscar_Estudiante, Agregar_Profe, Agregar_Curso 
+from AppEstudiantes.views import Agregar_Estudiante, Principal, Buscar_Estudiante, Agregar_Profe, Agregar_Curso, Buscar_Estudiante_aparte
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('principal', Principal, name="pagina-principal"),
-    path('gestionestudiantes', Agregar_Estudiante, name="formulario-estudiantes"),
+    path('gestionestudiantes', Agregar_Estudiante, name="agregar-estudiante"),
     path('gestionesprofes', Agregar_Profe, name="agregar-profe"),
     path('gestionescurso', Agregar_Curso, name="agregar-curso"),
-        path('gestionestudiantes/agregarestudiante', Agregar_Estudiante, name="agregar-estudiante"),
     path('buscarestudiante/', Buscar_Estudiante, name="buscar-estudiante"),
+    path('busquedaaparte/', Buscar_Estudiante_aparte, name="busqueda-aparte"),
  
 ]
 
