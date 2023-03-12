@@ -5,19 +5,7 @@
 {% block losdatos %}
 
 </br>
-<h4>Agregar Estudiante</h4>
-</br>
-
-<form action="{% url 'agregar-estudiante' %}" method="post">
-    {% csrf_token %}
-
-    {{form.as_p}}
-    <input type="submit" value="Agregar">
-</form>
- 
-
-</br>
-<h4>Estudiantes ingresados:</h4>
+<h4>Nombres de Estudiantes que coinciden con la búsqueda:</h4>
 </br>
 
 <ul>
