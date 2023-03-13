@@ -5,4 +5,5 @@ admin.site.register(Estudiante)
 admin.site.register(Profe)
 admin.site.register(Curso)
 
-# registrado el superusder con mi mail ggravino y clave 1234
+# user: admin
+# password: GGdjango2023!
